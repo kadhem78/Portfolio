@@ -1,0 +1,12 @@
+{% if message %}
+{% if done %}
+<div class="bg-green-500 py-4 px-2 rounded-lg text-xs text-white mb-5">
+{% else %}
+<div class="bg-red-500 py-4 px-2 rounded-lg text-xs text-white mb-5">
+{% endif %}
+    {{message}}
+</div>
+
+{% endif %}
+
+

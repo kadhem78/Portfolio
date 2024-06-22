@@ -1,0 +1,55 @@
+{% load widget_tweaks %}
+<h1 class="text-2xl mb-3 text-wrap text-gray-100 py-5"> 
+    <span class="inline-block rounded-lg  bg-slate-300 text-zinc-900 py-1 px-3 text-xs mr-10"> Contact  </span> Explore my Skills
+</h1>
+</hr>
+
+<div class=" py-10 md:flex">
+    <div  class="w-full md:w-3/4 lg:w-2/4 pr-5 text-clip sm:mb-5" >
+        <div id="message">
+            {% include "portfolio/includes/succes_message.html" %}
+        </div>
+        <form method='post'>
+            {% csrf_token %}
+            <div class="mb-4 w-full ">
+                {% render_field form.email class+="w-full rounded-lg border-[1px] border-slate-300 bg-neutral-900 text-sm text-slate-300 font-roboto " placeholder="Email" %}
+            </div>
+           <div class="mb-4 w-full">
+                {% render_field form.subject class+="w-full rounded-lg border-[1px] border-slate-300 text-sm text-slate-300 font-roboto bg-neutral-900" placeholder="Subject" %}
+             </div>
+            <div class="mb-4">
+                {% render_field form.body class+="w-full rounded-lg border-[1px] border-slate-300 text-sm text-slate-300 font-roboto bg-neutral-900" placeholder="Message" rows="3" %}
+
+            </div>
+            <div class="mt-2">
+                <input hx-post="{% url "create_message" %}" hx-target="#message" hx-swap="innerHTML" hx-trigger="click" class="rounded-lg text-gray-100 bg-neutral-900 font-roboto font-semibold text-sm w-full px-5 py-2 hover:bg-slate-300 hover:text-zinc-900" type="submit">
+            </div>
+        </form>
+
+        
+    </div>
+    
+
+    
+    <div class="max-w-lg mt-8 md:mt-0 md:pl-5">
+       <h4 class="text-gray-100">
+         Find Me On Social Media
+       </h4>
+       <div class="mt-4">
+        {% for account in accounts %}
+        <a class="border-2 border-slate-300 bg-slate-300 rounded-xl py-1 px-3 hover:bg-neutral-900 hover:text-slate-300 mr-2 mb-3 inline-block text-sm font-roboto" href="{{account.link}}" target="_blank">
+            {{account.name}}
+        </a>
+        {% endfor %}
+        {% if not accounts %}
+            <p class="font-roboto text-sm text-gray-300"> There is no accounts yet </p>
+        {% endif %}
+
+       </div>
+
+
+
+
+        
+    </div>
+</div>

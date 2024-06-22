@@ -1,0 +1,37 @@
+<h1 class="text-gray-100 text-2xl mb-3 text-wrap py-5 px-5"> 
+    <span class="inline-block rounded-lg  bg-slate-300 text-zinc-900 py-1 px-3 text-xs mr-10"> skills  </span> Explore my Skills
+</h1>
+</hr>
+{% if skills %}
+<div class="rounded-lg bg-neutral-900 px-5 py-10 text-white md:flex">
+    <div  class="w-full  pr-5 text-clip mb-8 md:mb-0 md:w-[60%] " >
+        {% for skill in descripted_skills %}
+            <div class="mb-8">
+                <h4 class="font-bold text-lg mb-2"> {{skill}} </h4>
+                <p class="text-slate-300 block text-wrap  w-full text-sm font-roboto leading-normal"> 
+                    {{skill.description}} gggg gggg ggg ggg gggg ggggg gggggg gggggggg
+
+                    
+                </p>
+            </div>
+
+        {% endfor %}
+    </div>
+    
+
+    
+    <div class="max-w-lg md:w-2/4">
+        {% for skill in skills %}
+            
+            <span class="border-2 border-slate-300 bg-slate-300 rounded-xl py-1 px-3 hover:bg-neutral-900 hover:text-slate-300 mr-2 mb-3 inline-block text-sm text-zinc-900 font-roboto">
+                {{skill}} 
+            </span>
+
+
+
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<p> there isno projects </p>
+{% endif %}

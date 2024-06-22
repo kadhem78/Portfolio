@@ -1,0 +1,26 @@
+<h1 class="text-2xl mb-3 text-wrap py-5 text-gray-100"> 
+    <span class="inline-block rounded-lg  bg-slate-300 text-zinc-900 py-1 px-3 text-xs mr-10 mb-2"> Projects </span> Explore my project  
+</h1>
+
+{% if projects %}
+<div class="grid lg:grid-cols-3 sm:grid-cols-1  md:grid-cols-2 space-y-2 space-x-2">
+{% for project in projects %}
+    <a href="{% url "project_detail" project.slug %}">
+        <div class="border-2  border-zinc-900 rounded-lg px-3 py-4 bg-neutral-900 hover:border-[2px] hover:border-slate-300 ">
+            <h3 class="mb-20 text-lg font-bold text-white"> {{project.name}} </h3>
+            <p class="font-roboto text-gray-300"> {{project.description}} </p>
+            
+        </div>
+    </a>
+
+
+
+
+{% endfor %}
+</div>
+{% else %}
+<div class="w-full text-center">
+    <p> there isno projects ! </p>
+</div>
+
+{% endif %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Kadhem Grib
+{% endblock title %}
+
+
+
+{% block content %}
+
+
+
+
+<!-- home header -->
+<section class="w-11/12 md:w-10/12 mx-auto py-5 md:px-10 px-5 bg-neutral-900 rounded-xl mt-2 mb-2">
+    {% include "portfolio/includes/home_header.html" %}
+</section>
+
+<!-- Projects section -->
+<section class="w-11/12 md:w-10/12  mx-auto pt-14 pb-32 md:px-10 px-5">
+    {% include "portfolio/includes/projects.html" %}
+</section>
+
+
+<!-- Skills section -->
+<section class="w-11/12 md:w-10/12 mx-auto py-14 pt-14 pb-32">
+    {% include "portfolio/includes/skills.html" %}
+</section>
+
+<!-- contact section -->
+<section class="w-11/12 md:w-10/12 mx-auto py-14 md:px-10 px-5">
+    {% include "portfolio/includes/contact.html" %}
+</section>
+
+<!-- Footer -->
+{% include "portfolio/includes/footer.html" %}
+
+{% endblock content %}
+
+
+
